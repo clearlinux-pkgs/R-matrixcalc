@@ -4,7 +4,7 @@
 #
 Name     : R-matrixcalc
 Version  : 1.0.3
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/matrixcalc_1.0-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/matrixcalc_1.0-3.tar.gz
 Summary  : Collection of functions for matrix calculations
