@@ -4,13 +4,13 @@
 #
 Name     : R-matrixcalc
 Version  : 1.0.3
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/matrixcalc_1.0-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/matrixcalc_1.0-3.tar.gz
 Summary  : Collection of functions for matrix calculations
 Group    : Development/Tools
 License  : GPL-2.0+
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 for probability, econometric and numerical analysis. There are
@@ -28,11 +28,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523316604
+export SOURCE_DATE_EPOCH=1552769292
 
 %install
+export SOURCE_DATE_EPOCH=1552769292
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523316604
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -67,8 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library matrixcalc|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  matrixcalc || :
 
 
 %files
