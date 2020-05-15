@@ -4,14 +4,13 @@
 #
 Name     : R-matrixcalc
 Version  : 1.0.3
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/matrixcalc_1.0-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/matrixcalc_1.0-3.tar.gz
 Summary  : Collection of functions for matrix calculations
 Group    : Development/Tools
 License  : GPL-2.0+
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 for probability, econometric and numerical analysis. There are
@@ -23,21 +22,22 @@ for probability, econometric and numerical analysis. There are
 
 %prep
 %setup -q -c -n matrixcalc
+cd %{_builddir}/matrixcalc
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571861083
+export SOURCE_DATE_EPOCH=1589535893
 
 %install
-export SOURCE_DATE_EPOCH=1571861083
+export SOURCE_DATE_EPOCH=1589535893
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
